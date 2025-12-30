@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC - Services</title>
+<!-- Meta & SEO -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="SWOT Network Company is a Brunei-based creative agency offering digital marketing, content creation, brand identity, and media services to empower your business." />
+<meta name="keywords" content="SWOT Network Company, SNC, digital marketing Brunei, content marketing, brand identity, social media agency, creative agency Brunei, Brunei marketing" />
+<meta name="author" content="SWOT Network Company" />
+<meta name="robots" content="index, follow" />
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="SWOT Network Company" />
+<meta property="og:description" content="Empowering Brunei businesses through innovative digital strategy and media production." />
+<meta property="og:image" content="https://bruneikreatif.com/img/snc logo black.jpg" />
+<meta property="og:url" content="https://www.bruneikreatif.com/swotnetworkcompany" />
+<meta property="og:type" content="website" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SWOT Network Company | Brunei’s Creative Agency" />
+<meta name="twitter:description" content="Empowering brands through creative social media and media strategies in Brunei." />
+<meta name="twitter:image" content="https://bruneikreatif.com/img/snc logo black.jpg" />
+<!-- Favicon -->
+<link rel="icon" href="images/snc logo black favicon.png" type="image/png">
+<style>
+
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: black;
+}
+
+.body {
+    background: #3a3838;
+    
+    
+}
+.floating-social-right {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.floating-social-right a {
+  background-color: #000;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.floating-social-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.floating-social-right a:hover {
+  background: linear-gradient(135deg, #0000cc, #00004d);
+  transform: scale(1.1);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    width: 100%;
+    background-image: url('images/service-snc-bakcground.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #aca7a7;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Bodoni", sans-serif;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffffff;
+}
+
+/* LEFT MENU */
+.nav-left {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-left li a {
+    font-weight: 700;
+    font-size: larger;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Hover underline */
+.nav-left li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+.nav-left li a:hover::after {
+    width: 100%;
+}
+
+/* RIGHT LOGO */
+.nav-right img {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0px 0px 5px rgba(110, 105, 105, 0.4));
+}
+
+/* ===== TABLET + MOBILE SLIDE MENU ===== */
+@media (max-width: 992px) {
+
+    .menu-toggle {
+        display: flex;      /* SHOW ICON */
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        margin-right: auto;       /* LEFT SIDE */
+        z-index: 1200;
+    }
+
+    .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background-color: #000;   /* 🔥 VISIBLE COLOR */
+        border-radius: 3px;
+        display: block;
+    }
+
+    .nav-left {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 35%;
+        height: 100vh;
+        background: #222;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        transition: left 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-left.active {
+        left: 0;
+    }
+
+    .nav-left li a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .nav-right {
+        display: none;
+    }
+     .nav-right img {
+        width: 90px;
+        filter: brightness(0) invert(1);
+    }
+
+    .nav-left.active ~ .nav-right {
+        left: 0;
+    }
+}
+
+
+/* SERVICE SECTION */
+.services-section {
+    width: 100%;
+    padding: 40px 60px;
+}
+
+.services-title {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+/* GRID LAYOUT */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    padding: 60px 15px;
+}
+
+/* CARD STYLE */
+.service-card {
+    background: #f4f4f4;  
+    padding: 35px 50px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* CARD HOVER */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.238);
+}
+
+/* TITLE */
+.service-card h3 {
+    font-size: 25px;
+    font-weight: 1000;
+    margin-bottom: 18px;
+}
+
+/* TEXT */
+.service-card p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+/* BUTTON */
+.service-card button {
+    border: 1px solid black;
+    background: black;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+
+
+/* RESPONSIVE */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .services-section {
+        padding: 20px;
+    }
+
+    .services-title {
+        font-size: 40px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 28px 20px;
+    }
+}
+
+
+/* FOOTER IMAGE */
+.footer-city img {
+    width: 100%;
+    display: block;
+    opacity: 0.3;
+}
+
+/* ============================
+   RESPONSIVE FIXES
+============================ */
+
+/* LARGE TABLETS */
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 40px;
+    }
+}
+
+/* SMALL TABLETS */
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 36px;
+        padding-left: 20px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+
+    .services-title {
+        font-size: 30px;
+        padding-left: 15px;
+    }
+
+    .nav-right img {
+        width: 65px;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 400px) {
+    .services-title {
+        font-size: 24px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+}
+/* Button container */
+.learn-btn {
+    grid-column: 1 / -1;        /* span full grid width */
+    display: flex;
+    justify-content: center;   /* CENTER horizontally */
+    margin-top: 40px;
+}
+
+/* Actual button */
+.learn-btn button {
+    padding: 14px 40px;
+    font-size: 16px;
+    background: #222;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.learn-btn button:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
+
+
+</style>
+</head>
+
+<body>
+<!-- Floating Logo -->
+<div class="floating-social-right" aria-label="Right side social link" role="navigation">
+  <a href="https://bruneikreatif.com" aria-label="Brunei Kreatif Homepage">
+    <img src="images/bk logo with white bg.jpg" alt="Brunei Kreatif Logo" id="floating-logo" class="floating-logo" loading="lazy" />
+  </a>
+</div>
+<!-- NAVBAR -->
+
+<header class="navbar">
+     <!-- MOBILE HAMBURGER -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-left">
+        <li><a href="index.html">ABOUT</a></li>
+        <li><a href="Services.html"class="active">SERVICES</a></li>
+        <li><a href="Location.html">LOCATION</a></li>
+        <li><a href="Contact.html">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <img src="images/snc-logo-white.png" alt="Logo" width="55">
+    </div>
+</header>
+
+<section class="services-section">
+    <h1 class="services-title">SERVICES</h1>
+    <div class="services-container">
+        <div class="service-card">
+            <h3>SOCIAL MEDIA MANAGEMENT</h3>
+            <p>We help grow your brand online by creating engaging content, scheduling posts, interacting with followers, and analyzing performance. Our goal is to boost visibility, build community, and drive real results across platforms like TikTok, Instagram, and Facebook.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>COMMERCIAL MEDIA</h3>
+            <p>We produce high-quality media content—videos, ads, and visuals—that promote your brand, products, or services. From concept to execution, we help you reach your audience through compelling storytelling and professional production across digital and broadcast platforms.</p>
+            
+        </div>
+
+        <div class="service-card">
+            <h3>DIGITAL MARKETING</h3>
+            <p>We help businesses grow online through SEO, social media, content creation, email marketing, and paid ads. Our goal is to boost your brand visibility, attract the right audience, and drive real results through smart digital strategies.</p>
+            
+        </div>
+
+        <div class="service-card">
+            <h3>CONTENT MARKETING</h3>
+            <p>We create valuable and engaging content—vlogs, videos, social posts, and more—to attract and retain your ideal audience. Our strategy focuses on building trust, boosting visibility, and driving meaningful results for your brand.</p>
+            
+        </div>
+
+        <div class="service-card">
+            <h3>BRAND IDENTITY</h3>
+            <p>We help businesses build a strong, memorable brand through logo design, visual style, messaging, and tone. Our service ensures your brand looks consistent, feels authentic, and connects with the right audience across all platforms.</p>
+            
+        </div>
+
+        <div class="service-card">
+            <h3>EVENT MANAGEMENT</h3>
+            <p>We plan and manage events from start to finish—handling logistics, coordination, and creative details. Whether it’s a corporate function, launch, or celebration, we ensure everything runs smoothly and leaves a lasting impression.</p>
+            
+        </div>
+        <div class="learn-btn">
+            <a href="Contact.html">
+        <button type="button">Learn More</button>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- FOOTER CITY IMAGE -->
+
+
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-left').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNC - Contact</title>
+
+<!-- SEO -->
+<meta name="description" content="SWOT Network Company is a Brunei-based creative agency offering digital marketing, content creation, brand identity, and media services to empower your business." />
+<meta name="keywords" content="SWOT Network Company, SNC, digital marketing Brunei, content marketing, brand identity, social media agency, creative agency Brunei, Brunei marketing" />
+<meta name="author" content="SWOT Network Company" />
+<!-- Favicon -->
+<link rel="icon" href="images/snc logo black favicon.png" type="image/png">
+<style>
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bodoni", sans-serif;
+}
+
+body {
+    background: #000;
+    background-image: url("");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+    margin: 0;
+}
+.floating-social-right {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.floating-social-right a {
+  background-color: #000;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.floating-social-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.floating-social-right a:hover {
+  background: linear-gradient(135deg, #0000cc, #00004d);
+  transform: scale(1.1);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    width: 100%;
+    background-image: url('images/service-snc-bakcground.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.nav a {
+    color:#af3f3f;
+    text-decoration: line-through;
+    margin: 15px;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: #949494;
+}
+
+nav a:hover {
+  color: #00c2ff;
+}
+
+/* LEFT MENU */
+.nav-left {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-left li a {
+    font-weight: 700;
+    font-size: larger;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Hover underline */
+.nav-left li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #000000;
+    transition: 0.3s ease;
+}
+
+.nav-left li a:hover::after {
+    width: 100%;
+}
+
+/* RIGHT LOGO */
+.nav-right img {
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(0px 0px 5px rgba(110, 105, 105, 0.4));
+}
+
+
+/* ===== TABLET + MOBILE SLIDE MENU ===== */
+@media (max-width: 992px) {
+
+    .menu-toggle {
+        display: flex;      /* SHOW ICON */
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        margin-right: auto;       /* LEFT SIDE */
+        z-index: 1200;
+
+    }
+
+    .menu-toggle span {
+        width: 26px;
+        height: 3px;
+        background: #727272;
+        border-radius: 3px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-left {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 35%;
+        height: 100vh;
+        background: #222;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        transition: left 0.4s ease;
+        z-index: 1000;
+    }
+
+    .nav-left.active {
+        left: 0;
+    }
+
+    .nav-left li a {
+        color: #ffffff;
+        font-size: 18px;
+    }
+
+    .nav-right {
+        display: none;
+    }
+     .nav-right img {
+        width: 90px;
+        filter: brightness(0) invert(1);
+    }
+
+    .nav-left.active ~ .nav-right {
+        left: 0;
+    }
+}
+
+
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+    .nav-left li a {
+        font-size: 13px;
+    }
+}
+/* Background */
+.contact-section {
+    width: 100%;
+    background: url("images/contact-background.png") no-repeat center center/cover;
+    padding: 60px 0;
+    color: white;
+    
+    min-height: 90vh;
+    background-size: cover;
+}
+
+
+/* Container */
+.contact-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Title */
+.contact-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+/* Grid layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+/* Icon */
+.icon img {
+    width: 70px;
+    margin-bottom: 25px;
+}
+
+/* Box heading */
+.contact-box h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Text */
+.contact-box p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.book-btn {
+    padding: 12px 30px;
+    border: none;
+    background: #ffffff;
+    color: rgb(73, 73, 73);
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+
+
+/* Responsive - mobile */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-title {
+        font-size: 36px;
+    }
+
+    .icon img {
+        width: 60px;
+    }
+}
+
+
+
+</style>
+</head>
+
+<body>
+<!-- Floating Logo -->
+<div class="floating-social-right" aria-label="Right side social link" role="navigation">
+  <a href="https://bruneikreatif.com" aria-label="Brunei Kreatif Homepage">
+    <img src="images/bk logo with white bg.jpg" alt="Brunei Kreatif Logo" id="floating-logo" class="floating-logo" loading="lazy" />
+  </a>
+</div>
+<!-- NAVBAR -->
+<header class="navbar">
+     <!-- MOBILE HAMBURGER -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-left">
+        <li><a href="index.html">ABOUT</a></li>
+        <li><a href="Services.html">SERVICES</a></li>
+        <li><a href="Location.html">LOCATION</a></li>
+        <li><a href="Contact.html"class="active">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <img src="images\snc-logo-white.png" alt="SNC Logo">
+    </div>
+</header>
+
+<section class="contact-section">
+    <div class="contact-container">
+
+        <h1 class="contact-title">CONTACT US</h1>
+
+        <div class="contact-grid">
+
+            <!-- CALL OR EMAIL -->
+            <div class="contact-box">
+                <div class="icon">
+                    <img src="images/mail-icon.png" alt="mail">
+                </div>
+                <h2>CALL OR EMAIL US</h2>
+                <p>PHONE : (+673) 7462855</p>
+                <p>EMAIL : swotnetwork.bn@gmail.com</p>
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="contact-box">
+                <div class="icon">
+                    <img src="images/location-icon.png" alt="location">
+                </div>
+                <h2>OUR ADDRESS</h2>
+                <p>SWOT NETWORK COMPANY, 53 Bt Hj Uthman Complex,<br>
+                Jalan Komersial Jaya Setia,<br>
+                Bandar Seri Begawan, BB 2513,<br>
+                Negara Brunei Darussalam</p>
+            </div>
+
+            <!-- OPENING HOURS -->
+            <div class="contact-box">
+                <div class="icon">
+                    <img src="images/clock-icon.png" alt="clock">
+                </div>
+                <h2>OPENING HOURS</h2>
+                <p>MON – THUR : 9AM – 4PM</p>
+                <p>FRIDAY : 9AM – 11.30AM | 2PM – 4PM</p>
+                <p>SAT – SUN : CLOSED</p>
+            
+            </div>
+            <a href="https://wa.me/message/E3T7PNB56OKWH1" target="_blank">
+        <button class="book-btn">BOOK SLOT</button>
+    </a>
+        </div>
+    </div>
+</section>
+<script>
+function toggleMenu() {
+    document.querySelector('.nav-left').classList.toggle('active');
+     document.querySelector('.menu-overlay').classList.toggle('active');
+}
+
+function closeMenu() {
+    document.querySelector('.nav-left').classList.remove('active');
+    document.querySelector('.menu-overlay').classList.remove('active');
+}
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-left a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+</script>
+
+</body>
+</html>
