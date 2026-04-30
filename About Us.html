@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<!-- Responsive viewport (keep only one) -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>About Us</title>
+
+<!-- Meta & SEO -->
+<meta name="description" content="SWOT Network Company is a Brunei-based creative agency offering digital marketing, content creation, brand identity, and media services to empower your business.">
+<meta name="keywords" content="SWOT Network Company, SNC, digital marketing Brunei, content marketing, brand identity, social media agency, creative agency Brunei, Brunei marketing">
+<meta name="author" content="SWOT Network Company">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="SWOT Network Company">
+<meta property="og:description" content="Empowering Brunei businesses through innovative digital strategy and media production.">
+<meta property="og:image" content="https://bruneikreatif.com/img/snc logo black.jpg">
+<meta property="og:url" content="https://www.bruneikreatif.com/swotnetworkcompany">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SWOT Network Company | Brunei’s Creative Agency">
+<meta name="twitter:description" content="Empowering brands through creative social media and media strategies in Brunei.">
+<meta name="twitter:image" content="https://bruneikreatif.com/img/snc logo black.jpg">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background: #000;
+color: #fff;
+}
+.floating-social-right {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.floating-social-right a {
+  background-color: rgb(255, 255, 255); 
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.floating-social-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.floating-social-right a:hover {
+  background: linear-gradient(135deg, #0000cc, #00004d);
+  transform: scale(1.1);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width: 60px;
+    border-radius: 60%;
+}
+.menu-toggle{
+  display:none;
+  position:absolute;
+  right:20px;
+  top:25px;
+  font-size:28px;
+  background:none;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* HEADER LAYOUT */
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 60px;
+background:black;
+position:relative;
+}
+
+/* LEFT (LOGO) */
+.nav-left img{
+height:70px;
+width: 70px;
+}
+
+/* CENTER (MENU) */
+.nav-center{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:40px;
+}
+
+.nav-center a{
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-center a:hover{
+opacity:0.7;
+}
+
+/* RIGHT (BUTTON) */
+.nav-right{
+display:flex;
+align-items:center;
+}
+
+.contact-btn{
+background:white;
+color:black;
+padding:8px 20px;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.contact-btn:hover{
+background:#ddd;
+}
+
+/* =========================
+   SIDEBAR DESIGN
+========================= */
+
+/* OVERLAY (background blur/dim) */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+z-index:998;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+/* SIDEBAR IMPROVED */
+.sidebar{
+position:fixed;
+top:0;
+right:-280px;
+width:260px;
+height:100vh;
+background:#111;
+display:flex;
+flex-direction:column;
+padding:80px 25px 30px;
+gap:15px;
+transition:0.35s ease;
+z-index:999;
+box-shadow:-5px 0 20px rgba(0,0,0,0.5);
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+padding:12px 10px;
+font-size:15px;
+border-radius:6px;
+transition:0.25s;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,0.1);
+}
+
+/* ACTIVE */
+.sidebar.active{
+right:0;
+}
+
+/* CLOSE BUTTON FIX */
+.close-btn-nav{
+position:absolute;
+top:20px;
+right:20px;
+font-size:26px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* CONTACT BUTTON INSIDE */
+.contact-btn-sidebar{
+background:white;
+color:black !important;
+border-radius:25px;
+text-align:center;
+margin-top:15px;
+padding:10px;
+}
+
+
+
+/* ABOUT SECTION */
+.about {
+min-height: 90vh;
+display: flex;
+align-items: center;
+padding: 50px 60px;
+background-image: url("img/IMG_4338 edit.jpg");
+background-size: cover;
+background-position: center;
+}
+
+.about-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 80%;
+margin: 0 auto;
+gap: 80px;
+}
+
+/* IMAGE */
+.about-image img{
+width: 250px;
+max-width: 100%;
+align-items: flex-start;
+}
+
+/* CONTENT */
+.about-content {
+max-width: 500px;
+}
+
+.about-content h1 {
+font-size: 40px;
+margin-bottom: 20px;
+}
+
+.about-content h2 {
+font-size: 30px;
+margin-bottom: 5px;
+}
+
+.underline-mission {
+width: 40px;
+height: 2px;
+background: #fffefe;
+margin-bottom: 20px;
+}
+
+.about-content p {
+font-size: 18px;
+line-height: 1.6;
+color: #cfcfcf;
+} 
+/* GOALS + VALUES SECTION */
+
+.snc-goals-values {
+background: #d9d9d9;
+color: #000000;
+padding: 80px 60px;
+}
+
+.snc-goals-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1100px;
+margin: auto;
+margin-bottom: 60px;
+}
+
+.snc-goals {
+max-width: 420px;
+}
+
+.snc-goals-image img {
+width: 180px;
+}
+
+
+/* VALUES PILLS EXACT STYLE */
+
+.value-item {
+border: 1px solid black;
+border-radius: 25px;
+padding: 12px 20px;
+text-align: center;
+font-size: 15px;
+position: relative;
+background: transparent;
+overflow: hidden;
+}
+
+.value-item::before {
+content: "";
+position: absolute;
+left: 0;
+top: 0;
+height: 100%;
+width: 40px;
+background: #cfcfcf;
+border-radius: 25px 0 0 25px;
+}
+
+.snc-goals {
+max-width: 420px;
+}
+
+.snc-goals h2 {
+font-size: 30px;
+margin-bottom: 10px;
+}
+
+.small-underline {
+width: 50px;
+height: 2px;
+background: black;
+position: center;
+margin-bottom: 20px;
+}
+
+.snc-goals p {
+font-size: 18px;
+line-height: 1.6;
+}
+
+.snc-goals-image img {
+width: 200px;
+}
+
+
+/* VALUES GRID */
+
+.snc-values {
+text-align: center;
+font-size: 26px;
+margin-bottom: 40px;
+}
+
+.values-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px 40px;
+max-width: 700px;
+margin: auto;
+}
+
+.value-item {
+border: 1px solid black;
+border-radius: 25px;
+padding: 12px 20px;
+text-align: center;
+font-size: 15px;
+background: transparent;
+position: relative;
+}
+
+/* =========================
+   TEAM SECTION (RESPONSIVE FIX)
+========================= */
+
+.snc-team-member-section{
+  padding: 80px 40px;
+  text-align: center;
+}
+
+/* TITLE */
+.team-title{
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+/* SUBTITLE */
+.team-subtitle{
+  margin: 40px 0 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* ROW LAYOUT (DESKTOP) */
+.team-row{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* CARD */
+.team-card{
+  width: 280px;
+  height: 240px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+}
+
+.team-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card:hover{
+  transform: translateY(-6px);
+}
+
+/* =========================
+   TABLET (768px)
+========================= */
+@media (max-width: 768px){
+
+  .snc-team-member-section{
+    padding: 60px 20px;
+  }
+
+  .team-title{
+    font-size: 32px;
+  }
+
+  .team-subtitle{
+    font-size: 16px;
+  }
+
+  .team-row{
+    gap: 15px;
+  }
+
+  .team-card{
+    width: 45%;
+    height: 220px;
+  }
+}
+
+/* =========================
+   MOBILE LARGE (425px)
+========================= */
+@media (max-width: 425px){
+
+  .team-title{
+    font-size: 26px;
+  }
+
+  .team-subtitle{
+    font-size: 14px;
+  }
+
+  .team-card{
+    width: 100%;
+    height: 200px;
+  }
+
+  .snc-team-member-section{
+    padding: 40px 15px;
+  }
+}
+
+/* =========================
+   MOBILE SMALL (320px)
+========================= */
+@media (max-width: 320px){
+
+  .team-card{
+    height: 180px;
+  }
+
+  .team-title{
+    font-size: 22px;
+  }
+}
+
+/* POPUP */
+
+.modal {
+display:none;
+position: fixed;
+z-index:999;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0, 0, 0, 0.652);
+text-align:center;
+padding-top:60px;
+}
+
+.modal img {
+  width: 600px;        /* fixed width */
+  height: 600px;       /* fixed height */
+  object-fit: cover;   /* crops nicely without stretching */
+  border-radius: 5px;
+}
+
+.modal-text {
+color:white;
+margin-top:15px;
+}
+
+.close-btn {
+position:absolute;
+top:20px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer-service{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:80px;
+  padding:50px 40px;
+  flex-wrap:wrap;
+  background:linear-gradient(to right,#444,#000);
+}
+
+.footer-logo img{
+  width:100px;
+}
+
+.footer-links{
+  display:flex;
+  gap:60px;
+}
+
+.footer-links h4{
+  margin-bottom:10px;
+}
+
+.footer-links p{
+  font-size:14px;
+  margin:5px 0;
+}
+
+
+
+/* =====================================
+LAPTOP RESPONSIVE (≤1200px)
+===================================== */
+
+@media (max-width: 1200px){
+
+
+.about-container{
+width: 90%;
+gap: 60px;
+}
+
+.about-content h1{
+font-size:60px;
+}
+
+.about-content h2{
+font-size:32px;
+}
+
+.snc-goals-container{
+max-width:900px;
+}
+
+.values-grid{
+max-width:600px;
+}
+
+}
+
+.team-card {
+width: 300px;
+height: 240px;
+} 
+
+
+
+/* =====================================
+SMALL LAPTOP (≤1024px)
+===================================== */
+
+@media (max-width:1024px){
+
+header{
+padding:20px 40px;
+}
+
+.about-container{
+gap:50px;
+}
+
+.about-image{
+width:240px;
+}
+
+.about-content h1{
+font-size:50px;
+}
+
+.about-content h2{
+font-size:28px;
+}
+
+.snc-goals-image img{
+width:160px;
+}
+
+.values-grid{
+gap:18px 30px;
+}
+
+}
+
+.team-title {
+font-size: 36px;
+}
+
+.team-card {
+width: 500px;
+height: 220px;
+} 
+
+.modal img {
+max-width: 90%;
+}
+
+/* =====================================
+TABLET RESPONSIVE (≤768px)
+===================================== */
+
+@media (max-width:768px){
+.menu-toggle{
+display:block;
+}
+
+.nav-center,
+.nav-right{
+display:none;
+}
+
+header{
+padding:20px 30px;
+}
+
+.nav-links{
+display:none;
+}
+.modal img {
+  width: 90%;
+  height: auto;
+}
+.contact-btn{
+font-size:12px;
+padding:6px 14px;
+}
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+.about{
+padding:40px 20px;
+}
+
+.about-content h1{
+font-size:36px;
+}
+
+.about-content h2{
+font-size:24px;
+}
+
+.about-content p{
+font-size:15px;
+}
+
+.snc-goals-values{
+padding:60px 20px;
+}
+
+.values-grid{
+grid-template-columns:1fr;
+gap:15px;
+}
+.snc-goals-container{
+flex-direction:column;
+text-align:center;
+gap:40px;
+}
+
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:black;
+padding:20px 0;
+text-align:center;
+gap:20px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links {
+display: none !important;
+}
+.snc-team-member-section {
+background-image: url("img/bk-bwn1.jpg");
+background-image: linear-gradient(rgba(0, 0, 0, 0.757), rgba(0, 0, 0, 0.7)), url("img/bk-bwn1.jpg");
+background-color: #000000a8;
+background-size: cover;
+background-position: center;
+padding: 80px 40px;
+text-align: center;
+}
+
+.team-section-dark {
+  padding: 60px 25px;
+}
+
+.team-title {
+font-size: 36px;
+}
+
+.team-subtitle {
+font-size: 15px;
+}
+
+.team-row {
+gap: 15px;
+}
+
+.team-card {
+width: 200px;
+height: 220px;
+}
+
+.modal img {
+max-width: 90%;
+}
+
+.close-btn {
+  right:25px;
+  font-size: 32px;
+  }
+
+/* =====================================
+SMALL MOBILE (≤480px)
+===================================== */
+
+@media (max-width:480px){
+
+.about-image{
+width:200px;
+}
+
+.about-content h1{
+font-size:30px;
+}
+
+.about-content h2{
+font-size:20px;
+}
+
+.about-content p{
+font-size:14px;
+}
+
+.value-item{
+font-size:13px;
+padding:10px 16px;
+}
+
+.team-title{
+font-size:26px;
+letter-spacing:1px;
+}
+
+.team-subtitle{
+font-size:14px;
+}
+
+.team-card {
+width: 100px;
+height: 120px;
+}
+
+.close-btn{
+font-size:24px;
+right:15px;
+}
+.modal img {
+    width: 90%;
+    height: auto;
+}
+}
+/* =========================
+   SMALL MOBILE ONLY
+========================= */
+
+@media (max-width:425px){
+.sidebar{
+width:240px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="overlay" id="overlay"></div>
+<div class="nav-left">
+</div>
+
+<button class="menu-toggle">☰</button>
+
+<div class="nav-center">
+  <a href="Home.html">Home</a>
+  <a href="About Us.html">About Us</a>
+  <a href="Services.html">Services</a>
+</div>
+
+<div class="nav-right">
+  <a href="Contact Us.html" class="contact-btn">Contact Us</a>
+</div>
+<!-- SIDEBAR (USED ONLY ON MOBILE/TABLET)-->
+<div class="sidebar" id="sidebar">
+    <button class="close-btn-nav">&times;</button>
+    <a href="Home.html">Home</a>
+  <a href="About Us.html">About Us</a>
+  <a href="Services.html">Services</a>
+  <a href="Contact Us.html" class="contact-btn-sidebar">Contact Us</a>
+
+</div>
+
+</header>
+<!-- Floating Logo -->
+<div class="floating-social-right" aria-label="Right side social link" role="navigation">
+  <a href="https://bruneikreatif.com" aria-label="Brunei Kreatif Homepage">
+    <img src="image/bk logo with white bg.jpg" alt="Brunei Kreatif Logo" id="floating-logo" class="floating-logo" loading="lazy" />
+  </a>
+</div>
+<!-- Main Section -->
+
+<main>
+
+<section class="about">
+
+<div class="about-container">
+<img class="about-image" src="image/snc-logo-black.png" alt="SWOT Network Company Logo">
+<div class="about-content">
+
+<h1>About Us</h1>
+<h2>Our Mission</h2>
+<div class="underline-mission"></div>
+
+<p>
+Mission is to enable success social media marketing through time & cost effective manner.
+</p>
+
+<p>
+To become Brunei's most recognized creative digital company, for every sector, built by the next generation, for the future.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+<section class="snc-goals-values">
+
+<div class="snc-goals-container">
+
+<div class="snc-goals">
+<h2>Our Goals</h2>
+
+<div class="small-underline"></div>
+
+<p>
+To consistently deliver creative solutions that not only stand out in the market but also executed with efficiency.
+</p>
+</div>
+
+<div class="snc-goals-image">
+<img src="image/snc-logo-white.png" alt="SWOT Network Company Goals">
+</div>
+
+</div>
+
+<!-- VALUES -->
+
+<div class="snc-values">
+
+<h2>Our Values</h2>
+
+<div class="values-grid">
+
+<div class="value-item">Together</div>
+<div class="value-item">Learning</div>
+<div class="value-item">Teaching</div>
+<div class="value-item">Development</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- OUR TEAM SECTION -->
+
+<section class="snc-team-member-section">
+
+<h1 class="team-title">OUR TEAMS</h1>
+
+<!-- CEO -->
+<h3 class="team-subtitle">CEO & FOUNDER</h3>
+<div class="team-row" style="justify-content:center;">
+  <div class="team-card" onclick="openModal('image/ceo-founder.jpeg','Aniesha Sofian','CEO & Founder')">
+    <img src="image/ceo-founder1.jpeg" alt="CEO">
+  </div>
+</div>
+
+<!-- INFORMATION TECHNOLOGY -->
+<h3 class="team-subtitle">INFORMATION TECHNOLOGY</h3>
+<div class="team-row">
+  <div class="team-card" onclick="openModal('image/team-adhwa.jpeg','Adhwa','IT Department')">
+    <img src="image/team-adhwa.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-aribah.jpeg','Aribah','IT Department')">
+    <img src="image/team-aribah.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-kamal.JPG','Kamal Syafiq','IT Department')">
+    <img src="image/team-kamal.JPG">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-deen.JPG','Deen Danyel','IT Department')">
+    <img src="image/team-deen.JPG">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-hong.jpeg','Hong Zen Chen','IT Department')">
+    <img src="image/team-hong.jpeg">
+  </div>
+</div>
+
+<!-- CREATIVE MEDIA -->
+<h3 class="team-subtitle">CREATIVE MEDIA</h3>
+<div class="team-row">
+  <div class="team-card" onclick="openModal('image/team-interncycle1.jpeg','Taufik & Faizatul','Creative Media')">
+    <img src="image/team-interncycle1.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-fakhrul.jpg','Fakrul','Creative Media')">
+    <img src="image/team-fakhrul.jpg">
+  </div>
+  <div class="team-card" onclick="openModal('image/sajidah.jpeg','Sajidah','Creative Media')">
+    <img src="image/team-sajidah1.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-syazwan1.jpg','Syazwan','Creative Media')">
+    <img src="image/team-syazwan.jpg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-syahidah1.JPG','Syahidah','Creative Media')">
+    <img src="image/team-syahidah.JPG">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-irdina.JPG','Irdina','Creative Media')">
+    <img src="image/team-irdina.JPG">
+  </div>
+</div>
+
+<!-- BUSINESS -->
+<h3 class="team-subtitle">BUSINESS</h3>
+<div class="team-row">
+  <div class="team-card" onclick="openModal('image/team-irfan.jpeg','Irfan','Business Department')">
+    <img src="image/team-irfan.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-nurus1.jpeg','Nurus','Business Department')">
+    <img src="image/team-nurus.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-zimah.png','Aziemah','Business Department')">
+    <img src="image/team-zimah.png">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-fatimatuz1.jpeg','Fatimatuz','Business Department')">
+    <img src="image/team-fatimatuz1.jpeg">
+  </div>
+  <div class="team-card" onclick="openModal('image/team-izzati1.jpeg','Izzati','Business Department')">
+    <img src="image/team-izzati1.jpeg">
+  </div>
+</div>
+
+</section>
+
+<!-- POPUP MODAL -->
+
+<div id="teamModal" class="modal">
+
+<span class="close-btn" onclick="closeModal()">&times;</span>
+
+<img id="modalImg">
+
+<div class="modal-text">
+  <h2 id="modalName"></h2>
+  <p id="modalRole"></p>
+</div>
+
+</div>
+
+</section>
+
+</section>
+<!-- FOOTER-->
+<section>
+<footer class="footer-service">
+    <div class="footer-logo">
+        <img src="image/snc-logo-black.png">
+    </div>
+
+    <div class="footer-links">
+
+    <div>
+        <h4>Our Page</h4>
+        <p>Home</p>
+        <p>About</p>
+        <p>Service</p>
+    </div>
+
+    <div>
+        <h4>Our Services</h4>
+        <p>Social Media Management</p>
+        <p>Marketing Strategy</p>
+        <p>Professional Photographer Videographer</p>
+        <p>Editor</p>
+        <p>Content Ideation</p>
+        <p>Brand Identity</p>
+        <p>Influencer Collaboration</p>
+    </div>
+
+    </div> 
+</footer>
+</section>
+<script>
+
+const toggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-center");
+
+toggle.addEventListener("click", () => {
+navLinks.classList.toggle("active");
+});
+function openModal(img,name,role){
+
+document.getElementById("teamModal").style.display="block";
+document.getElementById("modalImg").src=img;
+document.getElementById("modalName").innerText=name;
+document.getElementById("modalRole").innerText=role;
+
+}
+
+function closeModal(){
+
+document.getElementById("teamModal").style.display="none";
+
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  const openBtn = document.querySelector(".menu-toggle");
+  const closeBtn = document.querySelector(".close-btn-nav");
+
+  function openMenu(){
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+  }
+
+  function closeMenu(){
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  }
+
+  openBtn.addEventListener("click", openMenu);
+  closeBtn.addEventListener("click", closeMenu);
+  overlay.addEventListener("click", closeMenu);
+});
+</script>
+
+</body>
+</html>

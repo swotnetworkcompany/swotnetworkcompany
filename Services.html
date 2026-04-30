@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<!-- Responsive viewport (keep only one) -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Service</title>
+
+<!-- Meta & SEO -->
+<meta name="description" content="SWOT Network Company is a Brunei-based creative agency offering digital marketing, content creation, brand identity, and media services to empower your business.">
+<meta name="keywords" content="SWOT Network Company, SNC, digital marketing Brunei, content marketing, brand identity, social media agency, creative agency Brunei, Brunei marketing">
+<meta name="author" content="SWOT Network Company">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="SWOT Network Company">
+<meta property="og:description" content="Empowering Brunei businesses through innovative digital strategy and media production.">
+<meta property="og:image" content="https://bruneikreatif.com/img/snc logo black.jpg">
+<meta property="og:url" content="https://www.bruneikreatif.com/swotnetworkcompany">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SWOT Network Company | Brunei’s Creative Agency">
+<meta name="twitter:description" content="Empowering brands through creative social media and media strategies in Brunei.">
+<meta name="twitter:image" content="https://bruneikreatif.com/img/snc logo black.jpg">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+</head>
+<style>
+    
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+background:#000;
+color:#fff;
+}
+.floating-social-right {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.floating-social-right a {
+  background-color: rgb(255, 255, 255); /* slightly transparent white */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.floating-social-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.floating-social-right a:hover {
+  background: linear-gradient(135deg, #0000cc, #00004d);
+  transform: scale(1.1);
+}
+
+/* HEADER LAYOUT */
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 60px;
+background:black;
+position:relative;
+}
+
+/* LEFT (LOGO) */
+.nav-left img{
+height:70px;
+width: 70px;
+}
+
+/* CENTER (MENU) */
+.nav-center{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:40px;
+}
+
+.nav-center a{
+color:white;
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-center a:hover{
+opacity:0.7;
+}
+
+/* RIGHT (BUTTON) */
+.nav-right{
+display:flex;
+align-items:center;
+}
+
+.contact-btn{
+background:white;
+color:black;
+padding:8px 20px;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.contact-btn:hover{
+background:#ddd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#contact {
+  scroll-margin-top: 100px;
+}
+
+/* =========================
+   BASE DESKTOP (1440px+)
+========================= */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* Mobile only */
+@media (max-width:768px){
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:25px;
+}
+}
+
+/* =========================
+   SIDEBAR DESIGN
+========================= */
+
+/* OVERLAY (background blur/dim) */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+z-index:998;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+/* SIDEBAR IMPROVED */
+.sidebar{
+position:fixed;
+top:0;
+right:-280px;
+width:260px;
+height:100vh;
+background:#111;
+display:flex;
+flex-direction:column;
+padding:80px 25px 30px;
+gap:15px;
+transition:0.35s ease;
+z-index:999;
+box-shadow:-5px 0 20px rgba(0,0,0,0.5);
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+padding:12px 10px;
+font-size:15px;
+border-radius:6px;
+transition:0.25s;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,0.1);
+}
+
+/* ACTIVE */
+.sidebar.active{
+right:0;
+}
+
+/* CLOSE BUTTON FIX */
+.close-btn-nav{
+position:absolute;
+top:20px;
+right:20px;
+font-size:26px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* CONTACT BUTTON INSIDE */
+.contact-btn-sidebar{
+background:white;
+color:black !important;
+border-radius:25px;
+text-align:center;
+margin-top:15px;
+padding:10px;
+}
+
+/* =========================
+   TABLET + MOBILE ONLY
+========================= */
+
+@media (max-width:768px){
+
+/* show hamburger */
+.menu-toggle{
+display:block;
+font-size:28px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+margin-left:auto;
+}
+
+/* hide desktop nav */
+.nav-center,
+.nav-right{
+display:none;
+}
+
+}
+
+/* MOBILE SMALL TWEAK */
+@media (max-width:425px){
+.sidebar{
+width:240px;
+}
+}
+
+/* HERO TITLE */
+
+section h1{
+text-align:center;
+font-size:40px;
+margin:50px 0 40px;
+}
+
+
+/* SERVICES */
+
+.service-list{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  padding:90px 20px;
+  background:url("img/bk-bwn1.jpg") center/cover no-repeat;
+}
+
+.service-card{
+  width:300px;
+  background:white;
+  color:black;
+  border-radius:8px;
+  overflow:hidden;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(0, 0, 0, 0.301);
+  transition:.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-10px);
+}
+
+.service-name{
+  padding:15px;
+  font-size:12px;
+  font-weight:600;    
+}
+.service-description p{
+  font-size:12px;
+  font-weight:normal;
+  padding: 10px 12px;
+  line-height: normal;
+  margin-bottom: 0px;
+  text-align: center;
+}
+/* IMAGE CONTAINER */
+.service-image{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+/* ACTUAL IMAGE */
+.service-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;   /* fills nicely without distortion */
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+}
+
+
+/* CONTACT SECTION */
+
+.contact-section{
+display:flex;
+flex-wrap:wrap;
+background:#f5f5f5;
+color:black;
+}
+
+.contact-left{
+width:50%;
+padding:60px;
+}
+
+.contact-info{
+display:flex;
+gap:40px;
+margin-top:20px;
+}
+
+.location-image{
+width:50%;
+}
+
+.location-image iframe{
+width:100%;
+height:100%;
+min-height:400px;
+border:0;
+}
+
+
+/* FOOTER */
+
+.footer-service{
+background:#222;
+display:flex;
+justify-content: center;
+padding:40px 80px;
+}
+/* LINK (CENTER)*/
+.footer-links{
+margin:0 auto;
+display:flex;
+gap:100px;
+text-align:center;
+}
+
+.footer-service h4{
+color:#ccc;
+margin:5px 0;
+text-align:left;
+}
+.footer-service p{
+color:#ccc;
+margin:5px 0;
+text-align: left;
+}
+
+.footer-logo img{
+height: 200px;
+width: 200px;
+}
+
+/* ===============================
+   1024px (Small Laptop)
+================================= */
+@media (max-width:1024px){
+
+header{
+padding:20px 40px;
+}
+
+.nav-center{
+gap:25px;
+}
+
+.service-card{
+flex:1 1 240px;
+max-width:280px;
+}
+
+section h1{
+font-size:34px;
+}
+
+.contact-left{
+padding:40px;
+}
+
+}
+
+
+/* ===============================
+   768px (Tablet)
+================================= */
+@media (max-width:768px){
+
+header{
+flex-wrap:wrap;
+justify-content:center;
+text-align:center;
+}
+
+.nav-center{
+width:100%;
+justify-content:center;
+margin-top:10px;
+}
+
+.nav-right{
+width:100%;
+display:flex;
+justify-content:center;
+margin-top:10px;
+}
+
+.service-list{
+gap:15px;
+}
+
+.service-card{
+flex:1 1 200px;
+max-width:240px;
+}
+
+section h1{
+font-size:28px;
+}
+
+.contact-section{
+flex-direction:column;
+}
+
+.contact-left,
+.location-image{
+width:100%;
+}
+
+}
+
+
+/* ===============================
+   425px (Mobile L)
+================================= */
+@media (max-width:425px){
+
+header{
+flex-direction:column;
+gap:10px;
+padding:15px;
+}
+
+.nav-center{
+flex-direction:column;
+gap:10px;
+}
+
+.service-list{
+flex-direction:column;
+align-items:center;
+}
+
+.service-card{
+width:90%;
+max-width:none;
+}
+
+section h1{
+font-size:24px;
+margin:30px 0;
+}
+
+.contact-left{
+padding:20px;
+}
+
+.contact-info{
+flex-direction:column;
+gap:15px;
+}
+
+.footer-links{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+
+}
+
+
+/* ===============================
+   375px (Mobile M)
+================================= */
+@media (max-width:375px){
+
+section h1{
+font-size:22px;
+}
+
+.service-name{
+font-size:12px;
+}
+
+.contact-left{
+padding:15px;
+}
+
+}
+
+
+/* ===============================
+   320px (Mobile S)
+================================= */
+@media (max-width:320px){
+
+section h1{
+font-size:20px;
+}
+
+.nav-center a{
+font-size:13px;
+}
+
+.contact-btn{
+font-size:12px;
+padding:6px 14px;
+}
+
+}
+</style>
+<body>
+<!-- Floating Logo -->
+<div class="floating-social-right" aria-label="Right side social link" role="navigation">
+  <a href="https://bruneikreatif.com" aria-label="Brunei Kreatif Homepage">
+    <img src="image/bk logo with white bg.jpg" alt="Brunei Kreatif Logo" id="floating-logo" class="floating-logo" loading="lazy" />
+  </a>
+</div>
+
+<header>
+<div class="overlay" id="overlay"></div>
+<div class="nav-left">
+<img src="image/snc-logo-black.png" alt="SNC Logo">
+</div>
+
+<button class="menu-toggle">☰</button>
+
+<div class="nav-center">
+  <a href="Home.html">Home</a>
+  <a href="About Us.html">About Us</a>
+  <a href="Services.html">Services</a>
+</div>
+
+<div class="nav-right">
+  <a href="#contact" class="contact-btn">Contact Us</a>
+</div>
+<!-- SIDEBAR (USED ONLY ON MOBILE/TABLET)-->
+<div class="sidebar" id="sidebar">
+    <button class="close-btn-nav">&times;</button>
+    <a href="Home.html">Home</a>
+  <a href="About Us.html">About Us</a>
+  <a href="Services.html">Services</a>
+  <a href="#contact" class="contact-btn-sidebar">Contact Us</a>
+
+</div>
+
+</header>
+
+<section>
+    <h1 class="service-title">OUR SERVICES</h1>
+</section>
+
+<!-- SERVICES CARDS -->
+
+<section class="service-list">
+
+<div class="service-card">
+  <div class="service-name">SOCIAL MEDIA MANAGEMENT</div>
+  <div class="service-description">
+    <p>We help grow your brand online by creating engaging content, scheduling posts, interacting with followers, and analyzing performance. Our goal is to boost visibility, build community, and drive real results across platforms like TikTok, Instagram, and Facebook.</p>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-name">MARKETING STRATEGY</div>
+  <div class="service-description">
+    <p>We specialist strategiesing help reaching the right approach on which audiences matter the most that understanding and choosing the best pletforms.</p>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-name">PROFESSIONAL PHOTOGRAPHER AND VIDEOGRAPHER</div>
+  <div class="service-description">
+    <p>We capture high-quality photos and videos for your brand to feel special and allowing you to tell on your social media stories and highlights. With the colour adjustments and vibrant colours on the photos and videos depending on your products, events, promotional contents ensuring your visuals leaves with a strong impression from your audience.</p>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-name">EDITOR</div>
+  <div class="service-description">
+    <p>We create your valuable content to look smooth, professional, leave your audience with an impression where we specialist photo and video editing with a colour adjustment, sound balance, improving its quality on the overall flow of your vision.</p>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-name">CONTENT IDEATION</div>
+  <div class="service-description">
+    <p>Running out of ideas for your social media content? we got you! We can help create newly fresh and engaging content concepts that matches with your brand and audience expectations and see that your online presence are active and meaningful.</p>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-name">BRAND IDENTITY</div>
+  <div class="service-description">
+    <p>Your logo is more than just a logo, its a visual concept where audiences are easily to remember, entrust and choosing the brand with credibility. With the consistent of your brand to give out its message allowing your business remain to be recognised.</p>
+  </div>
+</div>
+
+<div class="service-card">
+  <div class="service-name">INFLUENCER COLLABORATION</div>
+  <div class="service-description">
+    <p>We help businesses grow strategising collaborating with influencers to introduce your products or services with wider audiences from their platform in a reliable way and gain new audince or customers</p>
+  </div>
+</div>
+
+</section>
+
+<!-- CONTACT SECTION-->
+<section class="contact-section" id="contact">
+    <div class="contact-left">
+        <img src="" class="contact-logo">
+        <h2>Contact Us</h2>
+
+    <div class="contact-info">
+        <div>
+        <h4>Where we are?</h4>
+            <p>
+            SWOT NETWORK COMPANY<br>
+            Unit 3B Hj Uthman Complex,<br>
+            Jalan Komersial Jaya Setia,<br>
+            Bandar Seri Begawan<br>
+            BB2713, Brunei
+            </p>
+        </div>
+    <div>
+        <h4>Phone No:</h4>
+        <p>+673 7462855</p>
+
+        <h4>Email:</h4>
+        <p>marketing@swotnetwork.com</p>
+    </div>
+
+    </div>
+
+    </div>
+    <div class="contact-right"></div>
+    <div class="location-image">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.0020884739524!2d114.93575797575846!3d4.93928903954143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f5673dfd8f53%3A0xf36a0b746d2b092b!2sSWOT%20Network%20Company!5e0!3m2!1sen!2sbn!4v1770706575103!5m2!1sen!2sbn" width="900" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<!-- FOOTER-->
+
+<footer class="footer-service">
+    <div class="footer-logo">
+        <img src="image/snc-logo-black.png">
+    </div>
+
+    <div class="footer-links">
+
+    <div>
+        <h4>Our Page</h4>
+        <p>Home</p>
+        <p>About</p>
+        <p>Service</p>
+    </div>
+
+    <div>
+        <h4>Our Services</h4>
+        <p>Social Media Management</p>
+        <p>Marketing Strategy</p>
+        <p>Professional Photographer Videographer</p>
+        <p>Editor</p>
+        <p>Content Ideation</p>
+        <p>Brand Identity</p>
+        <p>Influencer Collaboration</p>
+    </div>
+
+    </div> 
+</footer>
+
+<script>
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const openBtn = document.querySelector(".menu-toggle");
+const closeBtn = document.querySelector(".close-btn-nav");
+
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+
+window.addEventListener("load", () => {
+  if (window.location.hash === "#contact") {
+    const section = document.querySelector("#contact");
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
+});
+</script>
+
+</body>
+</html>

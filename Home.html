@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Testing</title>
+<!-- Meta & SEO -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="SWOT Network Company is a Brunei-based creative agency offering digital marketing, content creation, brand identity, and media services to empower your business." />
+<meta name="keywords" content="SWOT Network Company, SNC, digital marketing Brunei, content marketing, brand identity, social media agency, creative agency Brunei, Brunei marketing" />
+<meta name="author" content="SWOT Network Company" />
+<meta name="robots" content="index, follow" />
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="SWOT Network Company" />
+<meta property="og:description" content="Empowering Brunei businesses through innovative digital strategy and media production." />
+<meta property="og:image" content="https://bruneikreatif.com/img/snc logo black.jpg" />
+<meta property="og:url" content="https://www.bruneikreatif.com/swotnetworkcompany" />
+<meta property="og:type" content="website" />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SWOT Network Company | Brunei’s Creative Agency" />
+<meta name="twitter:description" content="Empowering brands through creative social media and media strategies in Brunei." />
+<meta name="twitter:image" content="https://bruneikreatif.com/img/snc logo black.jpg" />    
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+.floating-social-right {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.floating-social-right a {
+  background-color: rgb(255, 255, 255); /* slightly transparent white */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.floating-social-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.floating-social-right a:hover {
+  background: linear-gradient(135deg, #0000cc, #00004d);
+  transform: scale(1.1);
+}
+
+/* HEADER LAYOUT */
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 60px;
+background:rgb(238, 238, 238);
+position:relative;
+}
+
+/* LEFT (LOGO) */
+.nav-left img{
+height:70px;
+width: 70px;
+}
+
+/* CENTER (MENU) */
+.nav-center{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:40px;
+}
+
+.nav-center a{
+color:rgb(0, 0, 0);
+text-decoration:none;
+font-size:16px;
+transition:0.3s;
+}
+
+.nav-center a:hover{
+opacity:0.7;
+}
+
+/* RIGHT (BUTTON) */
+.nav-right{
+display:flex;
+align-items:center;
+}
+
+.contact-btn{
+background:rgb(0, 0, 0);
+color:rgb(255, 255, 255);
+padding:8px 20px;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.contact-btn:hover{
+background:#ddd;
+}
+
+/* =========================
+   BASE DESKTOP (1440px+)
+========================= */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+
+/* =========================
+   SIDEBAR DESIGN
+========================= */
+
+/* OVERLAY (background blur/dim) */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+opacity:0;
+visibility:hidden;
+transition:0.3s;
+z-index:998;
+}
+
+.overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+/* SIDEBAR IMPROVED */
+.sidebar{
+position:fixed;
+top:0;
+right:-280px;
+width:260px;
+height:100vh;
+background:#111;
+display:flex;
+flex-direction:column;
+padding:80px 25px 30px;
+gap:15px;
+transition:0.35s ease;
+z-index:999;
+box-shadow:-5px 0 20px rgba(0,0,0,0.5);
+}
+
+.sidebar a{
+color:white;
+text-decoration:none;
+padding:12px 10px;
+font-size:15px;
+border-radius:6px;
+transition:0.25s;
+}
+
+.sidebar a:hover{
+background:rgba(255,255,255,0.1);
+}
+
+/* ACTIVE */
+.sidebar.active{
+right:0;
+}
+
+/* CLOSE BUTTON FIX */
+.close-btn-nav{
+position:absolute;
+top:20px;
+right:20px;
+font-size:26px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* CONTACT BUTTON INSIDE */
+.contact-btn-sidebar{
+background:white;
+color:black !important;
+border-radius:25px;
+text-align:center;
+margin-top:15px;
+padding:10px;
+}
+
+/* =========================
+   TABLET + MOBILE ONLY
+========================= */
+
+@media (max-width:768px){
+
+/* show hamburger */
+.menu-toggle{
+display:block;
+font-size:28px;
+background:none;
+border:none;
+color:rgb(0, 0, 0);
+cursor:pointer;
+
+position:absolute;
+top:20px;
+right:20px;
+margin-left:0; /* remove this */
+z-index:1000;
+}
+
+/* hide desktop nav */
+.nav-center,
+.nav-right{
+display:none;
+}
+
+}
+
+/* MOBILE SMALL TWEAK */
+@media (max-width:425px){
+.sidebar{
+width:240px;
+}
+}
+
+/* HERO SECTION */
+
+.hero{
+    width:90%;
+    margin:40px 0px 40px 200px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    filter:grayscale(0%) saturate(100%) brightness(45%);
+    box-shadow:0 4px 8px rgba(139, 139, 139, 0);
+}
+
+.hero-text{
+    position:absolute;
+    top:60px;
+    left:60px;
+    color:white;
+}
+
+.hero-text h1{
+    font-size:48px;
+    max-width:600px;
+}
+
+.hero-text h2{
+    position:absolute;
+    bottom:-100px;
+    right:-700px;
+    font-size:40px;
+}
+
+/* DIVIDER */
+
+.divider{
+    width:88%;
+    height:2px;
+    background:#999;
+    margin: 40px 0px 40px auto;
+}
+
+/* SERVICES SECTION */
+
+.services{
+    width:100%;
+    background:linear-gradient(to right, #303030ce, #0c0c0cfd);
+    padding:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    section {
+    position: relative;
+    top: 40px;   /* Moves it 40px down */
+    left: 80px;  /* Moves it 80px to the right */
+    }
+}
+
+.services-left{
+    max-width:300px;
+    color:rgb(255, 255, 255);
+}
+
+.services-left p{
+    font-size:15px;
+    line-height:1.7;
+    padding: 0px 20px;
+}
+
+.services-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.service-btn{
+    border:2px solid white;
+    padding:18px 28px;
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s ease;
+}
+
+.service-btn:hover{
+    background:white;
+    color:black;
+}
+.snc-info{
+    display: flex;
+    justify-content: center;   /* centers horizontally */
+    align-items: center;       /* centers vertically */
+    gap: 20px;                 /* spacing between title & text */
+    background-image: url("image/bk-bwn1.1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.7)), url("image/bk-bwn1.1.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    padding: 10 60px 100px; /* extra space for footer*/
+    
+    color: white;
+}
+
+.snc-content h1{
+    font-size: 70px;
+    line-height: 1.2;
+    text-align: center;         /* matches screenshot left block alignment */
+}
+
+.snc-description p{
+    max-width: 580px;
+    font-size: 28px;
+    line-height: 1.7;
+    text-align: left;
+}
+/* FOOTER LABEL */
+
+.side-label{
+    position:fixed;
+    left: 8px;
+    bottom:40px;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-size:14px;
+    color:#ffffff;
+    mix-blend-mode: difference; /* keeps text visible on any background */
+}
+/* FOOTER (MATCHES IMAGE STYLE) */
+footer {
+  background: transparent;   /* makes footer see-through */
+  background:linear-gradient(to right, #444444ce, #0c0c0cfd);
+  color: white;
+  padding: 30px 80px;
+  position: relative;
+  z-index: 0;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0, 0, 0, 0.596);
+  z-index:-1;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-column p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-column p:hover {
+  color: #363636;
+}
+
+.footer-service{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.footer-links{
+  display:flex;
+  gap:60px;
+}
+/* ===============================
+   GLOBAL RESPONSIVE IMPROVEMENTS
+================================ */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* ===============================
+   LAPTOP RESPONSIVE (≤1024px)
+================================ */
+
+@media(max-width:1024px){
+
+header{
+    padding:20px 30px;
+}
+
+.hero-text{
+    left:40px;
+}
+
+.hero-text h1{
+    font-size:36px;
+    text-align: left;
+}
+
+.hero-text h2{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin-top:20px;
+    font-size:24px;
+    text-align:right;
+}
+
+.services{
+    padding:60px 40px;
+}
+
+.snc-info {
+    flex-direction: column;     /* stack vertically */
+    text-align: center;
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+.snc-content h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+.snc-description p {
+    font-size: 16px;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+footer{
+    padding: 30px;
+}
+
+
+
+/* ===============================
+   MOBILE RESPONSIVE (≤768px)
+================================ */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    gap:20px;
+}
+
+.hero{
+  width:90%;
+  margin:40px auto;
+}
+
+.hero img{
+    height:300px;
+}
+
+.hero-text{
+  top:30px;
+  left:20px;
+  right:20px;
+}
+
+.hero-text h1{
+  font-size:24px;
+  max-width:100%;
+}
+
+.hero-text h2{
+  position:static;
+  margin-top:15px;
+  font-size:18px;
+  text-align:left;
+}
+.side-label{
+    font-size:12px;
+    left:5px;
+    bottom:20px;
+    opacity:0.8;
+}
+}
+
+/* SERVICES STACK */
+
+.services{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+}
+
+.services-left{
+    max-width:100%;
+}
+
+.services-buttons{
+    justify-content:center;
+}
+
+/* SNC SECTION STACK */
+
+.snc-info{
+    flex-direction:column;
+    text-align:center;
+}
+
+.snc-content h1{
+    text-align:center;
+    font-size:40px;
+}
+
+.snc-description p{
+    text-align:center;
+    font-size:18px;
+}
+
+/* FOOTER STACK */
+
+  .footer-container {
+    flex-direction: column;      /* stack everything */
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    width: 90px;                 /* scale logo */
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  footer {
+    padding: 40px 20px;
+  }
+
+.side-label{
+    display:flex;
+    position:fixed;
+    left: 8px;
+    bottom:40px;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-size:14px;
+    color:#f3f1f1;
+}
+
+.services{
+  padding:50px 20px;
+  gap:30px;
+}
+
+.services-left p{
+  font-size:14px;
+}
+
+.service-btn{
+  padding:14px 18px;
+  font-size:13px;
+}
+
+.snc-content h1{
+  font-size:34px;
+}
+
+.snc-description p{
+  font-size:16px;
+}
+
+/* ===============================
+   SMALL MOBILE (≤480px)
+================================ */
+
+@media(max-width:480px){
+
+.hero img{
+    height:250px;
+}
+
+.hero-text{
+    left:20px;
+    top:30px;
+}
+
+.hero-text h1{
+    font-size:18px;
+}
+
+.hero-text h2{
+    font-size:14px;
+}
+
+.services{
+    padding:50px 20px;
+}
+
+.service-btn{
+    padding:14px 20px;
+    font-size:14px;
+}
+
+.snc-content h1{
+    font-size:24px;
+}
+
+.snc-description p{
+    font-size:14px;
+}
+
+.contact-btn-sidebar{
+  font-size:13px;
+}
+
+footer{
+    padding:30px 20px;
+}
+.side-label{
+    writing-mode:horizontal-tb;
+    transform:none;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%);
+    font-size:11px;
+    text-align:center;
+}
+}
+@media (max-width:320px){
+
+.hero-text h1{
+  font-size:16px;
+}
+
+.hero-text h2{
+  font-size:13px;
+}
+
+.service-btn{
+  font-size:12px;
+  padding:12px;
+}
+
+.snc-content h1{
+  font-size:22px;
+}
+
+.snc-description p{
+  font-size:13px;
+}
+
+.sidebar{
+  width:220px;
+}
+
+.side-label{
+    writing-mode:horizontal-tb;
+    transform:none;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%);
+    font-size:6px;
+    text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+<!-- Floating Logo -->
+<div class="floating-social-right" aria-label="Right side social link" role="navigation">
+  <a href="https://bruneikreatif.com" aria-label="Brunei Kreatif Homepage">
+    <img src="image/bk logo with white bg.jpg" alt="Brunei Kreatif Logo" id="floating-logo" class="floating-logo" loading="lazy" />
+  </a>
+</div>
+
+<header>
+<div class="overlay" id="overlay"></div>
+<div class="nav-left">
+<img src="image/snc-logo-white.png" alt="SNC Logo">
+</div>
+
+<button class="menu-toggle">☰</button>
+
+<div class="nav-center">
+  <a href="Home.html">Home</a>
+  <a href="About Us.html">About Us</a>
+  <a href="Services.html">Services</a>
+</div>
+
+<div class="nav-right">
+  <a href="Contact Us.html" class="contact-btn">Contact Us</a>
+</div>
+<!-- SIDEBAR (USED ONLY ON MOBILE/TABLET)-->
+<div class="sidebar" id="sidebar">
+    <button class="close-btn-nav">&times;</button>
+    <a href="Home.html">Home</a>
+  <a href="About Us.html">About Us</a>
+  <a href="Services.html">Services</a>
+  <a href="Contact Us.html" class="contact-btn-sidebar">Contact Us</a>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<img class="hero-img" src="image/IMG_4441 crop.jpg">
+
+<div class="hero-text">
+<h1>
+Stand out in the Market through Collaboration, Growth & Innovation
+</h1>
+
+<h2>
+Empowering the next generation
+</h2>
+
+</div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<section class="services">
+
+<div class="services-left">
+
+<p>
+We deliver efficient cost‑effective strategies powered by youth‑driven ideas combined with innovation and smart technology to help the business brand grow.
+</p>
+
+</div>
+
+
+<div class="services-buttons">
+
+<a href="#" class="service-btn">Commercial Media</a>
+<a href="#" class="service-btn">Digital Marketing</a>
+<a href="#" class="service-btn">Social Media Management</a>
+<a href="#" class="service-btn">Content Marketing</a>
+<a href="#" class="service-btn">Brand Identity</a>
+
+</div>
+
+</section>
+
+
+<div class="side-label">
+Swot Network Company © 2025
+</div>
+
+<section class="snc-info">
+    <div class="snc-content">
+        <h1>
+            Swot<br> 
+            Network <br>
+            Company <br>
+        </h1>
+    </div>
+    <div class="snc-description">
+        <p>Swot Network Company(SNC) is a social media marketing agency delivering efficient cost-effective strategies to help business brand grow.</p>
+    </div>
+    
+</section>
+
+
+<footer class="footer-service">
+    
+    <div class="footer-links">
+
+    <div>
+        <h4>Our Page</h4>
+        <p>Home</p>
+        <p>About</p>
+        <p>Service</p>
+    </div>
+
+    <div>
+        <h4>Our Services</h4>
+        <p>Social Media Management</p>
+        <p>Marketing Strategy</p>
+        <p>Professional Photographer Videographer</p>
+        <p>Editor</p>
+        <p>Content Ideation</p>
+        <p>Brand Identity</p>
+        <p>Influencer Collaboration</p>
+    </div>
+
+    </div> 
+</footer>
+
+<script>
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const openBtn = document.querySelector(".menu-toggle");
+const closeBtn = document.querySelector(".close-btn-nav");
+
+function openMenu(){
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeMenu(){
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+openBtn.addEventListener("click", openMenu);
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+</script>
+
+</body>
+</html>
+
+
